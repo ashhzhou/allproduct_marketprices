@@ -124,22 +124,22 @@ export default new Router({
       },{
         path:'/hbc',
         redirect:'/hbc/date',
-        name:"小白菜/杭白菜",
+        name:"小白菜杭白菜",
         component:resolve=>require(["../components/blank.vue"],resolve),
         children:[
           {
             path:'date',
-            name:'小白菜/杭白菜-date',
+            name:'小白菜杭白菜-date',
             component:resolve=>require(["../components/date.vue"],resolve),
           },
           {
             path:'month',
-            name:'小白菜/杭白菜-month',
+            name:'小白菜杭白菜-month',
             component:resolve=>require(["../components/month.vue"],resolve),
           },
           {
             path:'monthly',
-            name:'小白菜/杭白菜-monthly',
+            name:'小白菜杭白菜-monthly',
             component:resolve=>require(["../components/monthly.vue"],resolve),
           },
         ]

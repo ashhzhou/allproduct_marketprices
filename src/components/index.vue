@@ -16,6 +16,8 @@
         <el-header>
           <el-menu
             router
+            :default-active="activeIndex"
+            @select="handleSelect"
             class="el-menu-demo"
             mode="horizontal"
             background-color="#545c64"
@@ -62,12 +64,20 @@
     data(){
       return{
         appKey:1,
+        activeIndex:'date'
       }
     },
-        watch:{
-        '$route' (to,from){
-            this.appKey = new Date().getTime();
-            }
-        },
+    watch:{
+    '$route' (to,from){
+        this.appKey = new Date().getTime();
+        this.activeIndex = this.$route.path.split('/').reverse()[0]
+        }
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    },
+
   }
 </script>

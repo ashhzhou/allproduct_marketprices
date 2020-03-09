@@ -13,7 +13,7 @@ export default {
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('chart_example_date'));
     var product = this.$route.name.split('-',1).toString()
-    console.log(product);
+    // console.log(product);
     
     myChart.showLoading();
     $.get('http://192.168.0.107:8181/api/findAll',function(data){
